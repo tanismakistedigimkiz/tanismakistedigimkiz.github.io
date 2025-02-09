@@ -32,23 +32,23 @@ body {
 .envelope {
   position: relative;
   background: #f980a1;
-  height: 30vmin;
+  height: 40vmin;
   width: 60vmin;
 }
 
 .card {
   position: absolute;
   background: white;
-  height: 25vmin;
+  height: 35vmin;
   width: 60vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  left: 2.5vmin;
-  top: 0vmin;
+  left: 0;
+  top: -5vmin;
   opacity: 0;
-  transform: translateY(-15vmin);
+  transform: translateY(-10vmin);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -59,7 +59,7 @@ body {
 
 .message {
   position: absolute;
-  top: 5vmin;
+  top: 10vmin;
   font-size: 18px;
 }
 
@@ -67,10 +67,10 @@ body {
   position: absolute;
   height: 0;
   width: 0;
-  border-bottom: 20vmin solid #fba7bd;
+  border-bottom: 25vmin solid #fba7bd;
   border-left: 30vmin solid transparent;
   border-right: 30vmin solid transparent;
-  top: 10vmin;
+  top: 15vmin;
   z-index: 3;
 }
 
@@ -78,9 +78,9 @@ body {
   position: absolute;
   content: "";
   border-left: 30.5vmin solid #fcbbcc;
-  border-bottom: 20vmin solid transparent;
-  border-top: 20vmin solid transparent;
-  top: -20vmin;
+  border-bottom: 25vmin solid transparent;
+  border-top: 25vmin solid transparent;
+  top: -25vmin;
   left: -30vmin;
 }
 
@@ -88,9 +88,9 @@ body {
   position: absolute;
   content: "";
   border-right: 30.5vmin solid #fcbbcc;
-  border-bottom: 20vmin solid transparent;
-  border-top: 20vmin solid transparent;
-  top: -20vmin;
+  border-bottom: 25vmin solid transparent;
+  border-top: 25vmin solid transparent;
+  top: -25vmin;
   left: -0.5vmin;
 }
 
@@ -98,7 +98,7 @@ body {
   position: absolute;
   height: 0;
   width: 0;
-  border-top: 20vmin solid #f980a1;
+  border-top: 25vmin solid #f980a1;
   border-left: 30vmin solid transparent;
   border-right: 30vmin solid transparent;
   top: 0;
@@ -129,154 +129,175 @@ body {
 
 .heart {
   position: relative;
-  width: 5vmin;
-  height: 4vmin;
-  top: 7vmin;
+  width: 8vmin;
+  height: 6vmin;
+  top: 12vmin;
   left: -1vmin;
 }
 
 .heart:before,
 .heart:after {
-position: absolute;
-content: "";
-left: 2.5vmin;
-top: 7vmin;
-width: 2.5vmin;
-height: 4vmin;
-background: #f40b4a;
-border-radius: 2.5vmin 2.5vmin 0 0;
-transform: rotate(-45deg);
-transform-origin: 0 100%;
+  position: absolute;
+  content: "";
+  left: 4vmin;
+  top: 3vmin;
+  width: 4vmin;
+  height: 6vmin;
+  background: #f40b4a;
+  border-radius: 4vmin 4vmin 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
 }
 
 .heart:after {
-left: 0;
-transform: rotate(45deg);
-transform-origin: 100% 100%;
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 @keyframes open {
-100% {
-transform: rotatex(180deg);
-}
+  100% {
+    transform: rotatex(180deg);
+  }
 }
 
 @keyframes slide {
-100% {
-transform: translatey(-15vmin);
-z-index: 2;
-}
+  100% {
+    transform: translatey(-10vmin);
+    z-index: 2;
+  }
 }
 
 @keyframes open-rev {
-from {
-transform: rotatex(-180deg);
-}
+  from {
+    transform: rotatex(-180deg);
+  }
 }
 
 @keyframes slide-rev {
-from {
-transform: translatey(-15vmin);
-}
+  from {
+    transform: translatey(-10vmin);
+  }
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-body {
-font-size: 3vmin;
-}
+  body {
+    font-size: 3vmin;
+  }
 
-.envelope {
-height: 40vmin;
-width: 70vmin;
-}
+  .envelope {
+    height: 50vmin;
+    width: 70vmin;
+  }
 
-.card {
-height: 35vmin;
-width: 70vmin;
-}
+  .card {
+    height: 45vmin;
+    width: 70vmin;
+    top: -10vmin;
+  }
 
-.shadow {
-width: 70vmin;
-}
+  .shadow {
+    width: 70vmin;
+  }
 
-.heart {
-width: 8vmin;
-height: 6vmin;
-}
+  .heart {
+    width: 10vmin;
+    height: 8vmin;
+    top: 15vmin;
+  }
 
-.cover {
-border-bottom: 25vmin solid #fba7bd;
-border-left: 35vmin solid transparent;
-border-right: 35vmin solid transparent;
-top: 15vmin;
-}
+  .heart:before,
+  .heart:after {
+    left: 5vmin;
+    top: 4vmin;
+    width: 5vmin;
+    height: 8vmin;
+  }
 
-.cover::after {
-border-left: 35.5vmin solid #fcbbcc;
-top: -25vmin;
-left: -35vmin;
-}
+  .cover {
+    border-bottom: 30vmin solid #fba7bd;
+    border-left: 35vmin solid transparent;
+    border-right: 35vmin solid transparent;
+    top: 20vmin;
+  }
 
-.cover::before {
-border-right: 35.5vmin solid #fcbbcc;
-top: -25vmin;
-left: -0.5vmin;
-}
+  .cover::after {
+    border-left: 35.5vmin solid #fcbbcc;
+    top: -30vmin;
+    left: -35vmin;
+  }
 
-.lid {
-border-top: 25vmin solid #f980a1;
-border-left: 35vmin solid transparent;
-border-right: 35vmin solid transparent;
-}
+  .cover::before {
+    border-right: 35.5vmin solid #fcbbcc;
+    top: -30vmin;
+    left: -0.5vmin;
+  }
+
+  .lid {
+    border-top: 30vmin solid #f980a1;
+    border-left: 35vmin solid transparent;
+    border-right: 35vmin solid transparent;
+  }
 }
 
 @media (max-width: 480px) {
-body {
-font-size: 4vmin;
-}
+  body {
+    font-size: 4vmin;
+  }
 
-.envelope {
-height: 50vmin;
-width: 80vmin;
-}
+  .envelope {
+    height: 60vmin;
+    width: 80vmin;
+  }
 
-.card {
-height: 40vmin;
-width: 80vmin;
-}
+  .card {
+    height: 50vmin;
+    width: 80vmin;
+    top: -15vmin;
+  }
 
-.shadow {
-width: 80vmin;
-}
+  .shadow {
+    width: 80vmin;
+  }
 
-.heart {
-width: 10vmin;
-height: 8vmin;
-}
+  .heart {
+    width: 12vmin;
+    height: 10vmin;
+    top: 20vmin;
+  }
 
-.cover {
-border-bottom: 30vmin solid #fba7bd;
-border-left: 40vmin solid transparent;
-border-right: 40vmin solid transparent;
-top: 20vmin;
-}
+  .heart:before,
+  .heart:after {
+    left: 6vmin;
+    top: 5vmin;
+    width: 6vmin;
+    height: 10vmin;
+  }
 
-.cover::after {
-border-left: 40.5vmin solid #fcbbcc;
-top: -30vmin;
-left: -40vmin;
-}
+  .cover {
+    border-bottom: 35vmin solid #fba7bd;
+    border-left: 40vmin solid transparent;
+    border-right: 40vmin solid transparent;
+    top: 25vmin;
+  }
 
-.cover::before {
-border-right: 40.5vmin solid #fcbbcc;
-top: -30vmin;
-left: -0.5vmin;
-}
+  .cover::after {
+    border-left: 40.5vmin solid #fcbbcc;
+    top: -35vmin;
+    left: -40vmin;
+  }
 
-.lid {
-border-top: 30vmin solid #f980a1;
-border-left: 40vmin solid transparent;
-border-right: 40vmin solid transparent;
-}
-}
+  .cover::before {
+    border-right: 40.5vmin solid #fcbbcc;
+    top: -35vmin;
+    left: -0.5vmin;
+  }
+  
+  .lid {
+    border-top: 35vmin solid #f980a1;
+    border-left: 40vmin solid transparent;
+    border-right: 40vmin solid transparent;
+  }
+  }
+  
