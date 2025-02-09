@@ -31,7 +31,7 @@ body {
 }
 
 .card {
-  position: absolute; /* Keep it absolute for animation */
+  position: absolute;
   background: white;
   height: 25vmin;
   width: 43vmin;
@@ -41,14 +41,14 @@ body {
   align-items: center;
   left: 2.5vmin;
   top: 0vmin;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(-15vmin); /* Move up for animation */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+  opacity: 0;
+  transform: translateY(-15vmin);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .card.show {
-  opacity: 1; /* Show the card */
-  transform: translateY(0); /* Move to original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .message {
@@ -69,7 +69,6 @@ body {
 }
 
 .cover::after {
-  /*left triangle*/
   position: absolute;
   content: "";
   border-left: 24.5vmin solid #fcbbcc;
@@ -135,7 +134,7 @@ body {
   position: absolute;
   content: "";
   left: 2.5vmin;
-  top: 7vim;
+  top: 7vmin; /* Fixed typo from 7vim to 7vmin */
   width: 2.5vmin;
   height: 4vmin;
   background: #f40b4a;
@@ -155,19 +154,52 @@ body {
     transform: rotatex(180deg);
   }
 }
+
 @keyframes slide {
   100% {
     transform: translatey(-15vmin);
     z-index: 2;
   }
 }
+
 @keyframes open-rev {
   from {
     transform: rotatex(-180deg);
   }
 }
+
 @keyframes slide-rev {
   from {
     transform: translatey(-15vmin);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 3vmin; /* Adjust font size for smaller screens */
+  }
+
+  .envelope {
+    height: 40vmin; /* Increase height for better visibility */
+    width: 60vmin; /* Adjust width */
+  }
+
+  .card {
+    height: 35vmin; /* Adjust card height */
+    width: 55vmin; /* Adjust card width */
+  }
+
+  .message {
+    font-size: 16px; /* Adjust message font size */
+  }
+
+  .heart {
+    width: 8vmin; /* Adjust heart size */
+    height: 6vmin; /* Adjust heart size */
+  }
+
+  .shadow {
+    width: 60vmin; /* Adjust shadow width */
   }
 }
