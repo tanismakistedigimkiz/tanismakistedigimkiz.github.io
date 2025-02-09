@@ -20,35 +20,41 @@ body {
 
 .container {
   position: relative;
-  top: 0vmin;
+  width: 80vmin; /* Set a width that accommodates the cards */
+  height: 80vmin; /* Set a height for the container */
+  margin: auto; /* Center the container */
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
 }
 
 .envelope {
   position: relative;
   background: #f980a1;
   height: 30vmin;
-  width: 47.9vmin;
+  width: 60vmin; /* Adjusted to match card width */
 }
 
 .card {
-  position: absolute;
+  position: absolute; /* Keep it absolute for animation */
   background: white;
   height: 25vmin;
-  width: 43vmin;
+  width: 60vmin; /* Increased width */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   left: 2.5vmin;
   top: 0vmin;
-  opacity: 0;
-  transform: translateY(-15vmin);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-15vmin); /* Move up for animation */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
 }
 
 .card.show {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1; /* Show the card */
+  transform: translateY(0); /* Move to original position */
 }
 
 .message {
@@ -110,14 +116,13 @@ body {
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
-
 .shadow {
   position: relative;
   top: 3vmin;
   border-radius: 50%;
   opacity: 0.7;
   height: 2vmin;
-  width: 48vmin;
+  width: 60vmin; /* Adjusted to match card width */
   background: #e8c5d0;
 }
 
@@ -182,24 +187,20 @@ body {
 
   .envelope {
     height: 40vmin; /* Increase height for better visibility */
-    width: 60vmin; /* Adjust width */
+    width: 70vmin; /* Adjust width */
   }
 
   .card {
     height: 35vmin; /* Adjust card height */
-    width: 55vmin; /* Adjust card width */
+    width: 70vmin; /* Increased width for mobile devices */
   }
 
-  .message {
-    font-size: 16px; /* Adjust message font size */
+  .shadow {
+    width: 70vmin; /* Adjust shadow width */
   }
 
   .heart {
     width: 8vmin; /* Adjust heart size */
     height: 6vmin; /* Adjust heart size */
-  }
-
-  .shadow {
-    width: 60vmin; /* Adjust shadow width */
   }
 }
