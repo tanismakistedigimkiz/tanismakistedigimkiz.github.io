@@ -20,41 +20,28 @@ body {
 
 .container {
   position: relative;
-  width: 80vmin; /* Set a width that accommodates the cards */
-  height: 80vmin; /* Set a height for the container */
-  margin: auto; /* Center the container */
-  display: flex;
-  flex-direction: column; /* Stack cards vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
+  top: 0vmin;
 }
 
 .envelope {
   position: relative;
   background: #f980a1;
   height: 30vmin;
-  width: 60vmin; /* Adjusted to match card width */
+  width: 47.9vmin;
 }
 
 .card {
-  position: absolute; /* Keep it absolute for animation */
+  position: absolute;
   background: white;
   height: 25vmin;
-  width: 60vmin; /* Increased width */
+  width: 43vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   left: 2.5vmin;
   top: 0vmin;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(-15vmin); /* Move up for animation */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
-
-.card.show {
-  opacity: 1; /* Show the card */
-  transform: translateY(0); /* Move to original position */
+  animation: slide-rev 0.2s ease-out;
 }
 
 .message {
@@ -67,40 +54,41 @@ body {
   position: absolute;
   height: 0;
   width: 0;
-  border-bottom: 20vmin solid #fba7bd; /* Increased size for better visibility */
-  border-left: 30vmin solid transparent; /* Adjusted for wider cards */
-  border-right: 30vmin solid transparent; /* Adjusted for wider cards */
-  top: 20vmin; /* Adjusted position */
+  border-bottom: 15vmin solid #fba7bd;
+  border-left: 24vmin solid transparent;
+  border-right: 24vmin solid transparent;
+  top: 15vmin;
   z-index: 3;
 }
 
 .cover::after {
+  /*left triangle*/
   position: absolute;
   content: "";
-  border-left: 30.5vmin solid #fcbbcc; /* Adjusted for wider cards */
-  border-bottom: 20vmin solid transparent; /* Adjusted size */
-  border-top: 20vmin solid transparent; /* Adjusted size */
-  top: -20vmin; /* Adjusted position */
-  left: -30vmin; /* Adjusted position */
+  border-left: 24.5vmin solid #fcbbcc;
+  border-bottom: 15vmin solid transparent;
+  border-top: 15vmin solid transparent;
+  top: -15vmin;
+  left: -24vmin;
 }
 
 .cover::before {
   position: absolute;
   content: "";
-  border-right: 30.5vmin solid #fcbbcc; /* Adjusted for wider cards */
-  border-bottom: 20vmin solid transparent; /* Adjusted size */
-  border-top: 20vmin solid transparent; /* Adjusted size */
-  top: -20vmin; /* Adjusted position */
-  left: -0.5vmin; /* Adjusted position */
+  border-right: 24.5vmin solid #fcbbcc;
+  border-bottom: 15vmin solid transparent;
+  border-top: 15vmin solid transparent;
+  top: -15vmin;
+  left: -0.5vmin;
 }
 
 .lid {
   position: absolute;
   height: 0;
   width: 0;
-  border-top: 20vmin solid #f980a1; /* Increased size for better visibility */
-  border-left: 30vmin solid transparent; /* Adjusted for wider cards */
-  border-right: 30vmin solid transparent; /* Adjusted for wider cards */
+  border-top: 15vmin solid #f980a1;
+  border-left: 24vmin solid transparent;
+  border-right: 24vmin solid transparent;
   top: 0;
   transform-origin: top;
   animation: open-rev 2s;
@@ -111,13 +99,19 @@ body {
   animation-fill-mode: forwards;
 }
 
+.container:hover .card {
+  animation: slide 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
 .shadow {
   position: relative;
   top: 3vmin;
   border-radius: 50%;
   opacity: 0.7;
   height: 2vmin;
-  width: 60vmin; /* Adjusted to match card width */
+  width: 48vmin;
   background: #e8c5d0;
 }
 
@@ -134,7 +128,7 @@ body {
   position: absolute;
   content: "";
   left: 2.5vmin;
-  top: 7vmin; /* Fixed typo from 7vim to 7vmin */
+  top: 7vim;
   width: 2.5vmin;
   height: 4vmin;
   background: #f40b4a;
@@ -154,48 +148,19 @@ body {
     transform: rotatex(180deg);
   }
 }
-
 @keyframes slide {
   100% {
     transform: translatey(-15vmin);
     z-index: 2;
   }
 }
-
 @keyframes open-rev {
   from {
     transform: rotatex(-180deg);
   }
 }
-
 @keyframes slide-rev {
   from {
     transform: translatey(-15vmin);
-  }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  body {
-    font-size: 3vmin; /* Adjust font size for smaller screens */
-  }
-
-  .envelope {
-    height: 40vmin; /* Increase height for better visibility */
-    width: 70vmin; /* Adjust width */
-  }
-
-  .card {
-    height: 35vmin; /* Adjust card height */
-    width: 70vmin; /* Increased width for mobile devices */
-  }
-
-  .shadow {
-    width: 70vmin; /* Adjust shadow width */
-  }
-
-  .heart {
-    width: 8vmin; /* Adjust heart size */
-    height: 6vmin; /* Adjust heart size */
   }
 }
