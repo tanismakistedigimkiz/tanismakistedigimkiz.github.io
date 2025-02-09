@@ -42,14 +42,42 @@ body {
   left: 2.5vmin;
   top: 0vmin;
   animation: slide-rev 0.2s ease-out;
-  display: none; /* Hide cards initially */
+  visibility: hidden; /* Hide cards initially */
+  z-index: 1; /* Set a lower z-index */
+}
+
+.container:hover .card {
+  animation: slide 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  visibility: visible; /* Show cards when lid is open */
+  z-index: 2; /* Bring cards in front when visible */
+}
+
+.container:hover .lid {
+  animation: open 0.5s;
+  animation-fill-mode: forwards;
+  z-index: 1; /* Ensure lid is behind the cards when opened */
+}
+
+.lid {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 15vmin solid #f980a1;
+  border-left: 24vmin solid transparent;
+  border-right: 24vmin solid transparent;
+  top: 0;
+  transform-origin: top;
+  z-index: 3; /* Ensure lid is on top when closed */
+  transition: transform 1s ease;
 }
 
 
 .message {
   position: absolute;
   top: 5vmin;
-  font-size: 18px;
+  font-size: 11px;
 }
 
 .cover {
@@ -84,28 +112,6 @@ body {
   left: -0.5vmin;
 }
 
-.lid {
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-top: 15vmin solid #f980a1;
-  border-left: 24vmin solid transparent;
-  border-right: 24vmin solid transparent;
-  top: 0;
-  transform-origin: top;
-  animation: open-rev 2s;
-}
-
-.container:hover .lid {
-  animation: open 0.5s;
-  animation-fill-mode: forwards;
-}
-
-.container:hover .card {
-  animation: slide 0.2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-}
 
 .shadow {
   position: relative;
