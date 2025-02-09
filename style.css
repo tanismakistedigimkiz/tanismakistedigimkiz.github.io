@@ -42,7 +42,9 @@ body {
   left: 2.5vmin;
   top: 0vmin;
   animation: slide-rev 0.2s ease-out;
+  display: none; /* Hide cards initially */
 }
+
 
 .message {
   position: absolute;
