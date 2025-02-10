@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show only the first card initially
     cards.forEach((card, index) => {
         card.style.display = index === 0 ? 'flex' : 'none'; // Show only the first card
-        card.style.visibility = index === 0 ? 'visible' : 'hidden'; // Ensure first card is visible
     });
 
     // Function to show next card
